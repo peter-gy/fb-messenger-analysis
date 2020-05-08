@@ -1,18 +1,27 @@
 import re # regex library to extract specific portions from the source txt file
 
-# converts a single hex code to a 4-char utf8 encoded string
-# eg.: '1F1FF' ---> '\u00f0\u009f\u0087\u00bf'
+# converts a single hex code to a utf8 encoded string
+# eg.: '1F1FF' ---> '\xf0\x9f\x87\xbf'
 def single_hex_to_utf8(single_hex_string):
     utf8_encoding = chr(int(single_hex_string, 16)).encode('utf-8')
     utf8_string = str(utf8_encoding)
-    content = re.search(r"'(.*)'", utf8_string).group(1)
-    return re.sub(r'\\x', r'\\u00', content)
+    return re.search(r"'(.*)'", utf8_string).group(1)
     
-# converts a string consisting of multiple hex codes to a 4-char utf8 encoded string
-# eg.: '1F1FF 1F1FC' ---> '\u00f0\u009f\u0087\u00bf\u00f0\u009f\u0087\u00bc   '
+# converts a string consisting of multiple hex codes to a utf8 encoded string
+# eg.: '1F1FF 1F1FC' ---> '\xf0\x9f\x87\xbf\xf0\x9f\x87\xbc'
 def full_hex_to_utf8(hex_string):
     utf8_list = map(lambda hex : single_hex_to_utf8(hex), hex_string.split())
     return "".join(utf8_list)
+
+# converts a string consisting of multiple hex codes to a single utf8 encoded bytelist
+# eg.: '1F1FF 1F1FC' ---> b'\xf0\x9f\x87\xbf\xf0\x9f\x87\xbc'
+def hex_to_utf8_bytes(hex_string):
+    result = bytes()
+    for hex in hex_string.split():
+        b = chr(int(hex, 16)).encode('utf-8')
+        for i in range(0, len(b)):
+            result += b[i:i+1]
+    return result
 
 # Open and read the input file
 input_file_name = 'resources/emoji-test.txt'
@@ -23,7 +32,7 @@ input_file_text = input_file.read()
 output_file_name = 'resources/emoji-data-table.csv'
 output_file = open(output_file_name, 'w')
 # write csv headers to the output file
-output_file.write(",".join(['hex_string','utf8_string','emoji_desc'])+'\n')
+output_file.write(",".join(['emoji','hex_string','utf8_string','emoji_desc'])+'\n')
 
 # parse the input txt file
 for line in input_file_text.splitlines():
@@ -40,9 +49,12 @@ for line in input_file_text.splitlines():
 
     # convert the hexadecimal string to utf8 encoded string
     utf8_string = full_hex_to_utf8(hex_string)
+
+    # decode hex into the actual emoji
+    emoji = hex_to_utf8_bytes(hex_string).decode('utf-8')
     
     # write data to the output file
-    output_file.write(",".join([hex_string,utf8_string,emoji_desc])+'\n')
+    output_file.write(",".join([emoji,hex_string,utf8_string,emoji_desc])+'\n')
 
 input_file.close()
 output_file.close()
