@@ -22,7 +22,10 @@ input_file_text = input_file.read()
 # Create the output file
 output_file_name = 'resources/emoji-data-table.csv'
 output_file = open(output_file_name, 'w')
+# write csv headers to the output file
+output_file.write(",".join(['hex_string','utf8_string','emoji_desc'])+'\n')
 
+# parse the input txt file
 for line in input_file_text.splitlines():
     # skip line if it is empty or it is commented out
     if not line or line[0] == '#': continue
@@ -39,8 +42,7 @@ for line in input_file_text.splitlines():
     utf8_string = full_hex_to_utf8(hex_string)
     
     # write data to the output file
-    output_line = ",".join([hex_string,utf8_string,emoji_desc])
-    output_file.write(output_line+'\n')
+    output_file.write(",".join([hex_string,utf8_string,emoji_desc])+'\n')
 
 input_file.close()
 output_file.close()
