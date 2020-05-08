@@ -1,0 +1,19 @@
+{
+  "name": "fb-messenger-analysis",
+  "version": "1.0.0",
+  "description": "Hackathon project to analyze Facebook Messenger chat messages from multiple perspectives",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peter-gy/fb-messenger-analysis.git"
+  },
+  "author": "Péter Ferenc Gyarmati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peter-gy/fb-messenger-analysis/issues"
+  },
+  "homepage": "https://github.com/peter-gy/fb-messenger-analysis#readme"
+}
