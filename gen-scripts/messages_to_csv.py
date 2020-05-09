@@ -1,7 +1,6 @@
 import glob # used to list files of a specific type recursively
 import json # used to parse the messages which are in json format
-import re
-import emoji
+import emoji # used to facilitate working with emojis
 
 # list message jsons
 my_path = '../private-resources/messages'
