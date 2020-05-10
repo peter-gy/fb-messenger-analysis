@@ -28,11 +28,29 @@ input_file_name = '../resources/emoji-test.txt'
 input_file = open(input_file_name, 'r')
 input_file_text = input_file.read()
 
+# Open and read the file holding the emoji image links
+img_file_name = '../resources/emoji-img-links.txt'
+img_file = open(img_file_name, 'r')
+img_urls = img_file.read().splitlines()
+img_file.close()
+
+def find_emoji_img_url(hex_string):
+    hex_string = re.sub(r' ', r'-', hex_string).strip().lower()
+    for url in img_urls:
+        p1 = '_(.*)\.png'
+        p2 = 'emoji-modifier.*-type-.*[0-9]_(.*)_.*\.png'
+
+        try: url_hex_part = re.search(p2 if 'emoji-modifier' in url else p1, url).group(1)
+        except: pass # handle failed lookup silently
+        
+        if hex_string == url_hex_part: return url
+    return ''
+
 # Create the output file
 output_file_name = '../resources/emoji-data-table.csv'
 output_file = open(output_file_name, 'w')
 # write csv headers to the output file
-output_file.write(",".join(['emoji','hex_string','utf8_string','emoji_desc'])+'\n')
+output_file.write(",".join(['emoji','hex_string','utf8_string','emoji_desc', 'emoji_img_url'])+'\n')
 
 # parse the input txt file
 for line in input_file_text.splitlines():
@@ -46,15 +64,19 @@ for line in input_file_text.splitlines():
 
     # extract emoji description
     emoji_desc = re.search(r'E[0-9]+\.[0-9]+ (.*)', line).group(1)
+    emoji_desc = re.sub(r',', '', emoji_desc)
 
     # convert the hexadecimal string to utf8 encoded string
     utf8_string = full_hex_to_utf8(hex_string)
 
     # decode hex into the actual emoji
     emoji = hex_to_utf8_bytes(hex_string).decode('utf-8')
+
+    # find corresponding img url
+    emoji_img_url = find_emoji_img_url(hex_string)
     
     # write data to the output file
-    output_file.write(",".join([emoji,hex_string,utf8_string,emoji_desc])+'\n')
+    output_file.write(",".join([emoji,hex_string,utf8_string,emoji_desc, emoji_img_url])+'\n')
 
 input_file.close()
 output_file.close()
