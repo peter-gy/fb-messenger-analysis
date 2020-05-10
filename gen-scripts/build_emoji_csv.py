@@ -37,9 +37,9 @@ img_file.close()
 def find_emoji_img_url(hex_string):
     hex_string = re.sub(r' ', r'-', hex_string).strip().lower()
     for url in img_urls:
-        p1 = '_(.*)\.png'
-        p2 = 'emoji-modifier.*-type-.*[0-9]_(.*)_.*\.png'
-
+        # different patterns for regular and tone-modified emojis
+        p1 = '_(.*)\.png' # regular: 👨
+        p2 = 'emoji-modifier.*-type-.*[0-9]_(.*)_.*\.png' # tone-modified: 👨🏻
         try: url_hex_part = re.search(p2 if 'emoji-modifier' in url else p1, url).group(1)
         except: pass # handle failed lookup silently
         
