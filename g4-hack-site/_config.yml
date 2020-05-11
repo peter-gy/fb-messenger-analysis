@@ -22,8 +22,8 @@ description: "G4 | Hackathon Project"
 keywords: "Facebook, takout, data visualization, messenger traffic visualization, hackathon, private data"
 
 # Site settings
-url: http://nandomoreira.me
-baseurl: "fb-messenger-analysis/g4-hack-site"
+url: https://peter-gy.github.io
+baseurl: "/fb-messenger-analysis/g4-hack-site"
 
 # Author settings
 author:
