@@ -54,6 +54,7 @@ pip install numpy pandas matplotlib python-dateutil Pillow request
 ```
 
 **Make sure to have some version of [Python 3](https://www.python.org/downloads/release/python-368/) installed**
+
 Run the start script
 ```bash
 chmod +x start_script.sh
