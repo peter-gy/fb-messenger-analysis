@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/peter-gy/fb-messenger-analysis/issues"
   },
-  "homepage": "https://github.com/peter-gy/fb-messenger-analysis#readme"
+  "homepage": "https://github.com/peter-gy/fb-messenger-analysis#readme",
+  "dependencies": {}
 }
