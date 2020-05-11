@@ -23,7 +23,7 @@ keywords: "Facebook, takout, data visualization, messenger traffic visualization
 
 # Site settings
 url: http://nandomoreira.me
-baseurl: "/dotX"
+baseurl: "fb-messenger-analysis/g4-hack-site"
 
 # Author settings
 author:
