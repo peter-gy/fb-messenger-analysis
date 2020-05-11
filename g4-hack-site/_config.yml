@@ -17,30 +17,21 @@ markdown    : kramdown
 highlighter : pygments
 
 # SEO settings
-title: dotX
-description: "A free Jekyll theme for download"
-keywords: "Jekyll, theme, free, download, SEO, blog, web"
+title: Messenger AnalytiX
+description: "G4 | Hackathon Project"
+keywords: "Facebook, takout, data visualization, messenger traffic visualization, hackathon, private data"
 
 # Site settings
 url: http://nandomoreira.me
 baseurl: "/dotX"
-# baseurl: ""
 
 # Author settings
 author:
-  name      : Fernando Moreira
-  job       : Frontend Engineer
-  bio       : "Enthusiast performance, responsive design and usability, always looking for the best project and good coffee."
-  thumb     : /images/author.jpg
-  email     : nandomoreira.me@gmail.com
-  url       : http://nandomoreira.me
-  github    : http://github.com/nandomoreirame
-  twitter   : http://twitter.com/nandomoreirame
-  facebook  : http://facebook.com/fernando.dev
-  linkedin  : http://linkedin.com/in/nandomoreirame
+  name      : Péter Ferenc Gyarmati
+  job       : Computer Science Student
+  bio       : "A young one trying to improve himself by getting his dirty with as many projects as possible"
+  email     : dev.petergy@gmail.com
+  github    : https://github.com/peter-gy/
 
 # google_analytics: UA-52446115-1
-repo: http://github.com/nandomoreirame/dotX
-
-# comments
-disqus_shortname: "fernandomoreira"
+repo: https://github.com/peter-gy/fb-messenger-analysis

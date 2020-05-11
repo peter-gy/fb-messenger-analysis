@@ -3,7 +3,6 @@ layout: post
 title:  "Lorem ipsum dolor sit amet"
 permalink:  "lorem-ipsum-dolor-sit-amet"
 date:   2015-12-21 20:08:35 -0200
-categories: jekyll update
 ---
 
 <h1>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
