@@ -43,7 +43,7 @@ cd into the repo root and copy the `messages` folder from your takeout folder in
 ```bash
 cd fb-messenger-analysis 
 mkdir private-resources
-cp path/to/facebook-yourname/messages private-resources 
+mv path/to/facebook-yourname/messages private-resources/messages
 ```
 
 [Install Jupyter Notebooks](https://jupyter.org/install)
@@ -51,4 +51,12 @@ cp path/to/facebook-yourname/messages private-resources
 Download the required python dependencies using [pip](https://pip.pypa.io/en/stable/installing/)
 ```bash
 pip install numpy pandas matplotlib python-dateutil Pillow request
+```
+
+**Make sure to have some version of [Python 3](https://www.python.org/downloads/release/python-368/) installed**
+Run the start script
+```bash
+cd ..
+chmod +x start_script.sh
+./start_script.sh
 ```
