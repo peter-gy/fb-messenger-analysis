@@ -56,7 +56,8 @@ pip install numpy pandas matplotlib python-dateutil Pillow request
 **Make sure to have some version of [Python 3](https://www.python.org/downloads/release/python-368/) installed**
 Run the start script
 ```bash
-cd ..
 chmod +x start_script.sh
 ./start_script.sh
 ```
+
+If everything went well you should have Jupyter Notebooks open and ready to produce the visualization of your data!
