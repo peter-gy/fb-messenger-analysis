@@ -91,10 +91,10 @@ Now open the [containerized Notebooks](https://mybinder.org/v2/gh/peter-gy/fb-me
 
 You should see the following:
 
-![Jupyter Notebooks - root](jnb-sc-1.png)
+![Jupyter Notebooks - root](./jnb-sc-1.png)
 
 Navigate to `resources` folder and replace the `messages.csv` file with the one that you have generated with the script previously
 
-![Jupyter Notebooks - resources](jnb-sc-2.png)
+![Jupyter Notebooks - resources](./jnb-sc-2.png)
 
 Now you can enter the jupyter folder and start to play with the Notebooks!
