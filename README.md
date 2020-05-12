@@ -62,3 +62,39 @@ chmod +x start_script.sh
 ```
 
 If everything went well you should have Jupyter Notebooks open and ready to produce the visualization of your data!
+
+### Play with your data online
+---
+If you don't want to to download any of the above dependencies but want to use your own data for the visualizations, you can use Binder to browse the docker containerized version of the Jupyter Notebook.
+
+To do so, all you have to do is to produce a `messages.csv` file using your Facebook Data on your local machine by following these steps:
+
+Clone the project
+```bash
+git clone https://github.com/peter-gy/fb-messenger-analysis.git
+```
+
+`cd` into the repo root and copy the `messages` folder from your takeout folder into a folder called `private-resources` inside the repo.
+```bash
+cd fb-messenger-analysis 
+mkdir private-resources
+mv path/to/facebook-yourname/messages private-resources/messages
+```
+
+Run the script to process your data offline
+```bash
+cd gen-scripts
+python3 messages_to_csv.py 
+```
+
+Now open the [containerized Notebooks](https://mybinder.org/v2/gh/peter-gy/fb-messenger-analysis/master)
+
+You should see the following:
+
+![Jupyter Notebooks - root](jnb-sc-1.png)
+
+Navigate to `resources` folder and replace the `messages.csv` file with the one that you have generated with the script previously
+
+![Jupyter Notebooks - resources](jnb-sc-2.png)
+
+Now you can enter the jupyter folder and start to play with the Notebooks!
