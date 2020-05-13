@@ -21,7 +21,7 @@ If you would like to just get a quick glimpse of the static result of the visual
 ---
 [Binder](https://mybinder.org/) is an awesome tool which allows you to docker containerize you GitHub Repository and to browse it inside a Jupyter Notebooks Environment.
 
-Click on the badge below to launch the environment and to interact with the actual code which lives in this repository, using the sample data source. 
+Click on the badge below to launch the environment and to interact with the actual code which lives in this repository, using the sample data source.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/peter-gy/fb-messenger-analysis/master)
 
@@ -31,7 +31,7 @@ You can find the Jupyter Notebooks in the `jupyter` subdirectory.
 ---
 If you wish to use your own Facebook data to be visualized, you can simply clone this repository and explore it on your local machine. To do so just follow the steps below:
 
-Request a [Facebook Data Takeout](https://www.facebook.com/help/1701730696756992/) and  unzip the downloaded data. 
+Request a [Facebook Data Takeout](https://www.facebook.com/help/1701730696756992/) and  unzip the downloaded data.
 **Make sure to have your data downloaded in JSON format.**
 
 Clone the project
@@ -41,7 +41,7 @@ git clone https://github.com/peter-gy/fb-messenger-analysis.git
 
 cd into the repo root and copy the `messages` folder from your takeout folder into a folder called `private-resources` inside the repo.
 ```bash
-cd fb-messenger-analysis 
+cd fb-messenger-analysis
 mkdir private-resources
 mv path/to/facebook-yourname/messages private-resources/messages
 ```
@@ -76,7 +76,7 @@ git clone https://github.com/peter-gy/fb-messenger-analysis.git
 
 `cd` into the repo root and copy the `messages` folder from your takeout folder into a folder called `private-resources` inside the repo.
 ```bash
-cd fb-messenger-analysis 
+cd fb-messenger-analysis
 mkdir private-resources
 mv path/to/facebook-yourname/messages private-resources/messages
 ```
@@ -84,7 +84,7 @@ mv path/to/facebook-yourname/messages private-resources/messages
 Run the script to process your data offline
 ```bash
 cd gen-scripts
-python3 messages_to_csv.py 
+python3 messages_to_csv.py
 ```
 
 Now open the [containerized Notebooks](https://mybinder.org/v2/gh/peter-gy/fb-messenger-analysis/master)
@@ -98,3 +98,7 @@ Navigate to `resources` folder and replace the `messages.csv` file with the one 
 <img src="./jnb-sc-2.png"/>
 
 Now you can enter the jupyter folder and start to play with the Notebooks!
+
+## Acknowledgements
+
+[Geoff Boeing's Gmail Inbox visualization](https://geoffboeing.com/2016/02/visualizing-gmail-inbox/) was inspirational throughout creating the Jupyter Notebook for analyzing Facebook Messenger Traffic.
