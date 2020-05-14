@@ -19,7 +19,7 @@ If you would like to just get a quick glimpse of the static result of the visual
 
 ### Check out the interactive Jupyter Notebooks
 ---
-[Binder](https://mybinder.org/) is an awesome tool which allows you to docker containerize you GitHub Repository and to browse it inside a Jupyter Notebooks Environment.
+[Binder](https://mybinder.org/) is an awesome tool which allows you to docker containerize your GitHub Repository and to browse it inside Jupyter Notebooks Environment.
 
 Click on the badge below to launch the environment and to interact with the actual code which lives in this repository, using the sample data source.
 
